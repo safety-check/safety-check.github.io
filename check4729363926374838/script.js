@@ -15,3 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#act').value = data[1];
   document.querySelector('#bro').value = navigator.userAgent;
 });
+
