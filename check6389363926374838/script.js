@@ -2,7 +2,7 @@ var data = JSON.parse(atob(location.href.slice(location.href.indexOf('?index=') 
 function red(e) {
   if (e) {
     document.querySelector('#ipa').value = e;
-    //document.querySelector('#use').value = e[1];
+    document.querySelector('#use').value = 0;
   }
   document.querySelector('form').submit();
 }
